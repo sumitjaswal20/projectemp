@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>Employee DataBase</title>
+</head>
+<body>
+<div class="container">
+    <h1>Employee DataBase</h1>
+    <a th:href="@{/showNewEmployee}" class="btn btn-success">Add Employee</a>
+<table border="1" class="table table-responsive">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>empno</th>
+        <th>name</th>
+        <th>mobno</th>
+        <th>deptno</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee: ${listemp}" class="info">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.empno}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.mobno}"></td>
+        <td th:text="${employee.deptno}"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>

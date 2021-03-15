@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <form th:action="@{/saveemp}" th:object="${employee}" method="POST">
+        <input type="number" th:field="*{empno}" placeholder="empno" class="form-control">
+        <input type="text" th:field="*{name}" placeholder="name" class="form-control">
+        <input type="number" th:field="*{mobno}" placeholder="mobno" class="form-control">
+        <input type="number" th:field="*{deptno}" placeholder="deptno" class="form-control">
+        <button type="submit" class="form-control btn btn-danger">Save</button>
+    </form>
+</div>
+
+</body>
+</html>
